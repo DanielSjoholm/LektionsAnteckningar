@@ -54,11 +54,11 @@ Dessa komponenter tillsammans gör Hadoop till en kraftfull plattform för hante
 - **HDFS**: Data replikeras över flera noder för att garantera tillgänglighet även om en nod misslyckas.
 
 ## Praktiska tillämpningar av Hadoop
-- **Sociala medier**: Företag som FB och Twitter använder hadoop för att lagra och analysera enorma mängder data som genereras av alla användare.
-Denna analys hjälper till att förstå användarebeteenden, trender osv.
-- **E-handel**: Amazon, Ebay använder Hadoop för att analysera kundbeteenden, optimera sökningar, göra produktrekomendationer osv. De analyserar också klickströmingar.
-- **Finansiella Tjänster**: Banker och finansiella instituitioner använder Hadoop för bedrägeribekämpning, riskhantering och sentimentalanalys av marknaden. Genom att analyser allt detta kan de uppstäcka ovanliga beteenden.
-- **Hälsovård och life sciences**: Inom hälsovården används Hadoop för att analysera patientdatam, kliniska prövningar och genetiska sekvensfata för att förbättra diagnoser, behandlingsutfall och för att accelerera forskning om nya läkemedel.
-- **Telekommunikation**:
-- **Medier och underhållning**:
-- **
+
+- **Sociala medier**: Företag som Facebook och Twitter använder Hadoop för att lagra och analysera enorma mängder data som genereras av användare. Denna analys hjälper till att förstå användarbeteenden och trender.
+- **E-handel**: Amazon och eBay använder Hadoop för att analysera kundbeteenden, optimera sökningar och göra produktrekommendationer, samt analysera klickströmmar.
+- **Finansiella Tjänster**: Banker och finansiella institutioner använder Hadoop för bedrägeribekämpning, riskhantering och sentimentanalys av marknaden, vilket hjälper till att upptäcka ovanliga beteenden.
+- **Hälsovård och life sciences**: Hadoop används inom hälsovården för att analysera patientdata, kliniska prövningar och genetiska sekvensdata för att förbättra diagnoser, behandlingsutfall och påskynda forskning om nya läkemedel.
+- **Telekommunikation**: Telekomföretag använder Hadoop för att hantera och analysera stora volymer kunddata, nätverksprestanda och användningsmönster, vilket hjälper till att förbättra tjänstekvaliteten och kundupplevelsen.
+- **Medier och underhållning**: Mediebolag använder Hadoop för att analysera användarbeteenden och konsumtionsmönster, vilket möjliggör personaliserade rekommendationer och riktad reklam.
+- **Energi och naturresurser**: Energibolag använder Hadoop för att analysera stora datamängder från sensorer och smarta nätverk, vilket optimerar resursanvändning och hjälper till att förutsäga efterfrågan och hantera energiproduktion effektivt.
