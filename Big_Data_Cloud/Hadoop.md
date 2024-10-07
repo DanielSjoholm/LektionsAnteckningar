@@ -61,3 +61,4 @@ Denna analys hjälper till att förstå användarebeteenden, trender osv.
 - **Hälsovård och life sciences**: Inom hälsovården används Hadoop för att analysera patientdatam, kliniska prövningar och genetiska sekvensfata för att förbättra diagnoser, behandlingsutfall och för att accelerera forskning om nya läkemedel.
 - **Telekommunikation**:
 - **Medier och underhållning**:
+- **
