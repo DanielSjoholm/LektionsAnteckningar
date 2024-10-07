@@ -62,3 +62,21 @@ Dessa komponenter tillsammans gör Hadoop till en kraftfull plattform för hante
 - **Telekommunikation**: Telekomföretag använder Hadoop för att hantera och analysera stora volymer kunddata, nätverksprestanda och användningsmönster, vilket hjälper till att förbättra tjänstekvaliteten och kundupplevelsen.
 - **Medier och underhållning**: Mediebolag använder Hadoop för att analysera användarbeteenden och konsumtionsmönster, vilket möjliggör personaliserade rekommendationer och riktad reklam.
 - **Energi och naturresurser**: Energibolag använder Hadoop för att analysera stora datamängder från sensorer och smarta nätverk, vilket optimerar resursanvändning och hjälper till att förutsäga efterfrågan och hantera energiproduktion effektivt.
+
+## Hadoop "in the Cloud"
+
+Hadoop "in the cloud" innebär att köra Hadoop på molnplattformar som AWS, Google Cloud (GCP) och Azure. Dessa molnleverantörer erbjuder tjänster som gör det enkelt att använda Hadoop utan att behöva hantera den underliggande infrastrukturen själv.
+
+## AWS (Amazon Web Services)
+- **Amazon EMR (Elastic MapReduce)**: AWS erbjuder EMR, en tjänst som gör det enkelt att köra Hadoop och andra big data-verktyg som Spark. EMR hanterar resursallokering, skalning och underhåll av kluster så att du kan fokusera på att analysera data.
+
+## GCP (Google Cloud Platform)
+- **Google Dataproc**: GCP erbjuder Dataproc, en snabb, lätt och kostnadseffektiv tjänst för att köra Hadoop och Spark-kluster. Dataproc är integrerat med andra Google Cloud-tjänster, vilket gör det enkelt att lagra och analysera data i molnet.
+
+## Azure
+- **Azure HDInsight**: Azure erbjuder HDInsight, en helt hanterad tjänst för att köra Hadoop, Spark och andra big data-verktyg. HDInsight är integrerat med andra Azure-tjänster och erbjuder enkel skalbarhet och hantering.
+
+## Fördelar med Hadoop "in the Cloud"
+- **Skalbarhet**: Du kan snabbt skala upp eller ner baserat på dina behov.
+- **Kostnadseffektivitet**: Betala bara för den tid och de resurser du använder.
+- **Enkel hantering**: Molntjänsterna hanterar infrastrukturen, så du kan fokusera på dataanalys istället för underhåll av kluster.
