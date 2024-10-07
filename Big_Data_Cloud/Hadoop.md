@@ -56,3 +56,4 @@ Dessa komponenter tillsammans gör Hadoop till en kraftfull plattform för hante
 ## Praktiska tillämpningar av Hadoop
 - **Sociala medier**: Företag som FB och Twitter använder hadoop för att lagra och analysera enorma mängder data som genereras av alla användare.
 Denna analys hjälper till att förstå användarebeteenden, trender osv.
+- **E-handel**: Amazon, Ebay använder Hadoop för att analysera kundbeteenden, optimera sökningar, göra produktrekomendationer osv. De analyserar också klickströmingar. 
