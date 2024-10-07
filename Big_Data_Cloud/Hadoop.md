@@ -58,4 +58,6 @@ Dessa komponenter tillsammans gör Hadoop till en kraftfull plattform för hante
 Denna analys hjälper till att förstå användarebeteenden, trender osv.
 - **E-handel**: Amazon, Ebay använder Hadoop för att analysera kundbeteenden, optimera sökningar, göra produktrekomendationer osv. De analyserar också klickströmingar.
 - **Finansiella Tjänster**: Banker och finansiella instituitioner använder Hadoop för bedrägeribekämpning, riskhantering och sentimentalanalys av marknaden. Genom att analyser allt detta kan de uppstäcka ovanliga beteenden.
--- **Hälsovård och life sciences**: Inom hälsovården används Hadoop för att analysera patientdatam, kliniska prövningar och genetiska sekvensfata för att förbättra diagnoser, behandlingsutfall och för att accelerera forskning om nya läkemedel.
+- **Hälsovård och life sciences**: Inom hälsovården används Hadoop för att analysera patientdatam, kliniska prövningar och genetiska sekvensfata för att förbättra diagnoser, behandlingsutfall och för att accelerera forskning om nya läkemedel.
+- **Telekommunikation**:
+- **Medier och underhållning**:
