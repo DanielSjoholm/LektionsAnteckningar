@@ -59,3 +59,14 @@ Hadoop-ekosystemet erbjuder därmed en robust uppsättning verktyg för att hant
 - **Skalbarhet och Flexibilitet**: Hadoop är utformat för att enkelt skalas upp från en server till tusentals maskiner, där varje maskin erbjuder både lokal beräkning och lagring. Detta möjliggör snabb och effektiv bearbetning och lagring av enorma datamängder.
 
 - **Felfördröjning**: En av de viktigaste funktionerna i Hadoop är dess robusta felfördröjningsmekanism. Data som lagras i HDFS replikeras över flera noder i klustret, vilket säkerställer att systemet kan fortsätta att fungera utan avbrott även om en eller flera noder går ner. Denna redundans minimerar driftstopp och säkerställer tillgänglighet.
+
+## Är Spark och Apache Spark samma sak?
+
+Nej, det finns stora skillnader mellan Spark och Apache Spark.
+
+- **Spark**: Ett programspråk som är en del av Ada-språket, utvecklat för att skapa programvara med höga krav på tillförlitlighet, säkerhet och underhållbarhet. Spark är särskilt lämpligt för system där fel kan leda till allvarliga konsekvenser, exempelvis inom flygindustrin, försvarsindustrin och transportsektorn. En nackdel är att det är tidskrävande att lära sig och har höga krav på hårdvara.
+
+- **Apache Spark**: Ett ramverk för distribuerad databehandling som utvecklats av Apache Software Foundation. Apache Spark används främst inom big data-analys för snabb bearbetning av stora datamängder och är känt för sin förmåga till in-memory processing, vilket gör analys snabbare och mer effektiv jämfört med andra verktyg som MapReduce.
+
+Trots liknande namn har Spark och Apache Spark helt olika användningsområden och funktioner.
+
