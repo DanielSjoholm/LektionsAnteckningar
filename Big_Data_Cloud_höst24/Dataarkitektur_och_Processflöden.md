@@ -93,3 +93,130 @@ Ett big data-system är ofta organiserat i lager för att säkerställa effektiv
 Genom att dela upp systemet i dessa lager kan man skala och optimera varje del för sina specifika behov, från insamling av data till analys och visualisering.
 
 Detta möjliggör snabbare och mer noggranna beslutfattning i stora organisationer.
+
+# Dataanalys
+
+## Deskriptiv och prediktiv analys
+
+**Deskriptiv analys** handlar om att sammanfatta och beskriva historisk data för att få insikt om vad som hänt. Målet är att identifiera mönster, trender och sammanhang utan att göra förutsägelser om framtiden.
+
+**Prediktiv analys** är motsatsen och använder historisk data samt statistik för att göra förutsägelser om framtida händelser.
+
+# NoSQL Databastyper och molntjänster
+
+## Dokumentdatabaser
+Idealisk för semistrukturerad data som JSON och XML.
+
+- **MongoDB**
+  - **Molnleverantörer**:
+    - AWS, Azure, Google Cloud via [MongoDB Atlas](https://www.mongodb.com/atlas)
+    - Azure: [Azure Cosmos DB (MongoDB API)](https://azure.microsoft.com/en-us/services/cosmos-db/)
+
+- **Amazon DocumentDB**
+  - **Molnleverantör**:
+    - AWS: [Amazon DocumentDB](https://aws.amazon.com/documentdb/)
+
+## Kolumnbaserade databaser
+Lämpliga för effektiv läsning och skrivning av stora datamängder.
+
+- **Apache Cassandra**
+  - **Molnleverantörer**:
+    - AWS: [Keyspaces for Apache Cassandra](https://aws.amazon.com/keyspaces/)
+    - Azure: [Azure Managed Instance for Apache Cassandra](https://azure.microsoft.com/en-us/services/cosmos-db/cassandra/)
+    - Google Cloud: [Cassandra on Google Cloud](https://cloud.google.com/marketplace)
+
+- **Google Bigtable**
+  - **Molnleverantör**:
+    - Google Cloud: [Google Bigtable](https://cloud.google.com/bigtable)
+
+- **Amazon Redshift**
+  - **Molnleverantör**:
+    - AWS: [Amazon Redshift](https://aws.amazon.com/redshift/)
+
+## Key-value databaser
+Den enklaste NoSQL-formen, idealisk för scenarier med höga krav på prestanda.
+
+- **Redis**
+  - **Molnleverantörer**:
+    - AWS: [Amazon ElastiCache for Redis](https://aws.amazon.com/elasticache/redis/)
+    - Azure: [Azure Cache for Redis](https://azure.microsoft.com/en-us/services/cache/)
+    - Google Cloud: [Redis on Google Cloud](https://cloud.google.com/memorystore/docs/redis)
+
+- **Amazon DynamoDB**
+  - **Molnleverantör**:
+    - AWS: [Amazon DynamoDB](https://aws.amazon.com/dynamodb/)
+
+- **Riak**
+  - **Molnleverantörer**:
+    - Finns som öppen källkod och kan implementeras på flera moln, men saknar en specifik hanterad molntjänst.
+
+## Graf-databaser
+Data lagras som noder och relationer mellan dem, idealiskt för komplexa nätverk av data.
+
+- **Neo4j**
+  - **Molnleverantörer**:
+    - AWS, Azure, Google Cloud via [Neo4j Aura](https://neo4j.com/cloud/aura/)
+
+- **Amazon Neptune**
+  - **Molnleverantör**:
+    - AWS: [Amazon Neptune](https://aws.amazon.com/neptune/)
+
+- **Azure Cosmos DB (Gremlin API)**
+  - **Molnleverantör**:
+    - Azure: [Azure Cosmos DB (Gremlin API)](https://azure.microsoft.com/en-us/services/cosmos-db/graph/)
+
+## Time-series databaser
+Speciellt utformade för att hantera tidsstämplad data, exempelvis sensordata och loggar.
+
+- **InfluxDB**
+  - **Molnleverantörer**:
+    - AWS, Azure, Google Cloud via [InfluxDB Cloud](https://www.influxdata.com/products/influxdb-cloud/)
+
+- **Amazon Timestream**
+  - **Molnleverantör**:
+    - AWS: [Amazon Timestream](https://aws.amazon.com/timestream/)
+
+- **TimescaleDB**
+  - **Molnleverantörer**:
+    - AWS, Azure, Google Cloud via [Timescale Cloud](https://www.timescale.com/cloud)
+    - Kan även köras på PostgreSQL som självhanterad lösning i flera moln
+
+
+# Databastyper och molnleverantörer
+
+## Tabellbaserade databastjänster
+
+- **MySQL**
+  - Populär och öppen källkod, används ofta för webbutveckling.
+  - **Molnleverantörer**:
+    - AWS: [Amazon RDS for MySQL](https://aws.amazon.com/rds/mysql/)
+    - Google Cloud: [Cloud SQL for MySQL](https://cloud.google.com/sql/docs/mysql)
+    - Azure: [Azure Database for MySQL](https://azure.microsoft.com/en-us/products/mysql/)
+
+- **PostgreSQL**
+  - Kraftfull databas med stöd för både relations- och JSON-data, öppen källkod.
+  - **Molnleverantörer**:
+    - AWS: [Amazon RDS for PostgreSQL](https://aws.amazon.com/rds/postgresql/)
+    - Google Cloud: [Cloud SQL for PostgreSQL](https://cloud.google.com/sql/docs/postgres)
+    - Azure: [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/products/postgresql/)
+
+- **Microsoft SQL Server**
+  - Ett kommersiellt alternativ som ofta används i företagsmiljöer.
+  - **Molnleverantörer**:
+    - AWS: [Amazon RDS for SQL Server](https://aws.amazon.com/rds/sqlserver/)
+    - Google Cloud: [SQL Server on Google Cloud](https://cloud.google.com/sql-server)
+    - Azure: [Azure SQL Database](https://azure.microsoft.com/en-us/products/azure-sql/)
+
+- **Oracle Database**
+  - Mycket skalbar och ofta använd i större företag och organisationer.
+  - **Molnleverantörer**:
+    - AWS: [Amazon RDS for Oracle](https://aws.amazon.com/rds/oracle/)
+    - Oracle Cloud: [Oracle Autonomous Database](https://www.oracle.com/autonomous-database/)
+    - Azure: [Oracle Database on Azure](https://azure.microsoft.com/en-us/solutions/oracle/)
+
+- **IBM Db2**
+  - Skalbar databas för stora datamängder och transaktionsintensiva miljöer.
+  - **Molnleverantörer**:
+    - IBM Cloud: [IBM Db2 on Cloud](https://www.ibm.com/cloud/db2)
+    - AWS: Tillgängligt genom [IBM Cloud Pak for Data on AWS](https://aws.amazon.com/partners/ibm-cloud-pak-for-data/)
+    - Google Cloud: Stöd via [IBM Cloud Pak for Data on Google Cloud](https://cloud.google.com/solutions/partners/ibm)
