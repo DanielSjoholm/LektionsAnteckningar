@@ -111,3 +111,88 @@ https://www.youtube.com/watch?v=HPYUuBuq1Ns&list=PLuQSde7Xvu7DCRenR1otgxAplTtnzK
 🚀 **Sammanfattning:**  
 - **Single Database** = Lättanvänd, molnoptimerad lösning för enskilda databaser.  
 - **Managed Instance** = Full SQL Server-upplevelse i Azure för företag och migreringar.
+
+**Slowly Changing Dimensions (SCD)** är en metod för att hantera förändringar i dimensionstabeller i en **datamodell** (vanligtvis i ett **data warehouse**). Det finns tre huvudsakliga typer:
+
+---
+
+### **🔹 SCD Type 1 – Överskrivning av historik**
+- **Beskrivning**: Uppdaterar värdet direkt utan att behålla någon historik.  
+- **När används det?**: När **historik inte är viktig**, och endast det senaste värdet behövs.  
+- **Exempel**:  
+  - En kund ändrar sin **adress**, och den gamla adressen ersätts direkt.
+  - Tabell före ändring:  
+    | Customer_ID | Name  | Address       |
+    |------------|-------|--------------|
+    | 1          | Anna  | Stockholm    |
+  - Tabell efter ändring:  
+    | Customer_ID | Name  | Address       |
+    |------------|-------|--------------|
+    | 1          | Anna  | Göteborg     |  
+
+---
+
+### **🔹 SCD Type 2 – Bevarar historik med versionering**
+- **Beskrivning**: Skapar en ny rad i tabellen med en **tidsstämpel eller versionsnummer** för att behålla historik.  
+- **När används det?**: När det är **viktigt att spåra förändringar över tid**.  
+- **Exempel**:  
+  - En kund flyttar till en ny adress, men vi vill behålla den gamla för historik.  
+  - Tabell före ändring:  
+    | Customer_ID | Name  | Address    | Start_Date | End_Date  | Is_Current |
+    |------------|-------|------------|------------|------------|------------|
+    | 1          | Anna  | Stockholm  | 2023-01-01 | NULL       | Yes        |
+  - Tabell efter ändring:  
+    | Customer_Key | Customer_ID | Name  | Address   | Start_Date  | End_Date   | Is_Current |
+    |-------------|------------|-------|-----------|------------|------------|------------|
+    | 1           | 1          | Anna  | Stockholm | 2023-01-01 | 2024-02-01 | No         |
+    | 2           | 1          | Anna  | Göteborg  | 2024-02-01 | NULL       | Yes        |
+
+---
+
+### **🔹 SCD Type 3 – Bevarar endast den senaste historiken**
+- **Beskrivning**: Lägger till en **extra kolumn** för att lagra den tidigare versionen av fältet.  
+- **När används det?**: När endast **den senaste förändringen är relevant**, men full historik inte behövs.  
+- **Exempel**:  
+  - En kund flyttar och vi vill behålla **både nuvarande och föregående adress**, men inte äldre historik.  
+  - Tabell före ändring:  
+    | Customer_ID | Name  | Current_Address | Previous_Address |
+    |------------|-------|----------------|-----------------|
+    | 1          | Anna  | Stockholm      | NULL            |
+  - Tabell efter ändring:  
+    | Customer_ID | Name  | Current_Address | Previous_Address |
+    |------------|-------|----------------|-----------------|
+    | 1          | Anna  | Göteborg       | Stockholm       |
+
+---
+
+### **🔹 Sammanfattning**
+| Typ  | Hur hanteras förändringar? | Fördelar | Nackdelar |
+|------|----------------------|------------|------------|
+| **SCD Type 1** | Ersätter gamla värden | Enkel, ingen extra lagring | Ingen historik bevaras |
+| **SCD Type 2** | Skapar en ny rad med datum/version | Full historik bevaras | Kräver mer lagring och hantering |
+| **SCD Type 3** | Lägger till en extra kolumn för föregående värde | Enkel att implementera, bevarar viss historik | Begränsad historik (endast senaste ändringen) |
+
+---
+
+**Vilken SCD-typ ska jag använda?**  
+✅ **Type 1** – När **historik inte är viktig** och endast senaste värdet behövs.  
+✅ **Type 2** – När **full historik krävs**, t.ex. spårning av kundens adresser över tid.  
+✅ **Type 3** – När **endast den senaste ändringen är viktig**, t.ex. vid senaste och föregående kundkategori.
+
+
+Här är den korrigerade tabellen med en tydligare beskrivning i sista rutan:
+
+| **Typ av fönster**    | **Beskrivning** | **Överlappning?** | **Exempel (5 min fönster, start kl. 12:00)** |
+|-----------------------|----------------|------------------|----------------------------------|
+| **Tumbling Window**  | Fasta tidsintervall utan överlapp. Varje händelse tillhör exakt ett fönster. | ❌ Nej | 12:00–12:05, 12:05–12:10, 12:10–12:15 |
+| **Hopping Window**   | Fasta tidsintervall **med överlapp**. Man definierar en "hop size" (hur ofta ett nytt fönster startar). | ✅ Ja | Om hop size = 2 min: 12:00–12:05, 12:02–12:07, 12:04–12:09 |
+| **Sliding Window**   | Ett nytt fönster skapas **när en ny händelse inträffar** och varar en viss tid. | ✅ Ja | Om en händelse inträffar kl. 12:03 och fönstret är 5 min → 12:03–12:08 |
+| **Session Window**   | Dynamiska fönster som baseras på **inaktivitet** mellan händelser. Ett nytt fönster skapas när en ny aktivitet börjar. | ❌ Nej (men fönsterstorleken varierar) | Om aktivitet sker kl. **12:00–12:03** och nästa aktivitet börjar kl. **12:07**, skapas två session-fönster:<br> 🔹 **Fönster 1:** 12:00–12:03 *(stängs pga. inaktivitet)*<br> 🔹 **Fönster 2:** 12:07 och framåt *(fortsätter så länge ny aktivitet sker inom session-timeout)* |
+
+---
+
+### **Sammanfattning**
+- **Tumbling** → Fasta fönster, ingen överlapp.  
+- **Hopping** → Fasta fönster, men kan överlappa.  
+- **Sliding** → Skapas när en ny händelse sker, varar en viss tid.  
+- **Session** → Dynamiska fönster baserade på aktivitet/inaktivitet.
